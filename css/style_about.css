@@ -1,0 +1,266 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url("swiper.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  color: rgb(
+    255,
+    255,
+    255
+  ); 
+  background-color: black;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: rgba(255, 255, 255, 1);
+  background: rgb(0, 0, 0);
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  display: block;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+/* Nav Styles */
+nav {
+  width: 100%;
+  text-align: center;
+  background: rgb(0, 0, 0);
+  font-size: 18px;
+  margin-top: 70px;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li a {
+  display: inline-block;
+  padding: 20px 30px;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background: rgba(101, 101, 101, 0.494);
+}
+
+/* Main Styles */
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  padding: 20px 20px; 
+  gap: 5px;
+}
+
+.box1,
+.box2,
+.box3 {
+  padding: 10px;
+  background: rgba(21, 13, 29, 0);
+  color: rgba(255, 255, 255, 1);
+  /*border: 1px solid rgba(255, 255, 255, 0.3);*/
+}
+
+.box1 {
+  grid-column: 1/5;
+  grid-row: 1/12;
+  background: url(../images/IMG_9560.JPG) top no-repeat;
+  background-size: contain;
+  overflow: visible;
+  z-index: -1;
+}
+
+.box1 img {
+  width: 100%;
+}
+
+.box2 {
+  grid-column: 1/5;
+  grid-row: 4/12;
+}
+
+.box2 p {
+  font-size: max(5 * (2vw + 1vh) / 20, 20px);
+  text-shadow: 2px 2px 3px #000000;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.box3 {
+  display: grid;
+  grid-column: 1/5;
+  grid-row: 2/8;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 2000;
+}
+
+.nested {
+  grid-column: 1/4;
+  grid-row: 1/4;
+  padding: 3px;
+  font-size: 70px;
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 2px 2px 3px #000000;
+}
+
+.about {
+  padding: 10px;
+  margin: 10px;
+  z-index: 2000;
+  font-size: 1.2em;
+  color: rgb(255, 255, 255);
+}
+
+.about p {
+  line-height: 40px;
+  -webkit-box-reflect: below 0px
+    linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.18));
+}
+
+@keyframes ani1 {
+  from {
+    transform: translateX(1000px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+/* Footer Styles */
+footer {
+  font-size: 0.5em;
+  clear: both;
+  text-align: center;
+  color: rgb(255, 255, 255, 0.4);
+  margin-top: 40px;
+  z-index: 4000;
+}
+
+/* Media Queries for Tablets */
+@media only screen and (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 5px;
+    padding: 20px 20px; 
+  }
+  .box1 {
+    grid-column: 1/9;
+    grid-row: 1/15;
+  }
+  .box2 {
+    grid-column: 1/9;
+    grid-row: 5/15;
+  }
+
+  .box3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column: 2/9;
+    grid-row: 2/4;
+  }
+
+  .nested {
+    grid-column: 1/4;
+    grid-row: 1/4;
+    font-size: 90px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  article {
+    height: 350px;
+    flex-direction: row;
+  }
+
+  .imgb:nth-child(2n) {
+    order: 2;
+  }
+
+  .textb:nth-child(2n) {
+    order: 1;
+  }
+}
+
+/* Media Queries for Desktops */
+@media only screen and (min-width: 1200px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 5px;
+    padding: 20px 20px; 
+  }
+  .box1 {
+    grid-column: 1/9;
+    grid-row: 1/12;
+  }
+  .box2 {
+    grid-column: 1/9;
+    grid-row: 6/12;
+  }
+
+  .box3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column: 2/9;
+    grid-row: 3/6;
+  }
+
+  .nested {
+    grid-column: 1/4;
+    grid-row: 1/4;
+    font-size: 100px;
+  }
+}

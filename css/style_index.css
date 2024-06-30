@@ -1,0 +1,384 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url("swiper.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  font-size: 1.2em;
+  color: rgb(
+    255,
+    255,
+    255
+  ); 
+  background-color: black;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: rgba(255, 255, 255, 1);
+  background: rgb(0, 0, 0);
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  display: block;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+/* Nav Styles */
+nav {
+  width: 100%;
+  text-align: center;
+  background: rgb(0, 0, 0);
+  font-size: 18px;
+  margin-top: 70px; 
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li a {
+  display: inline-block;
+  padding: 20px 30px;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background: rgba(101, 101, 101, 0.494);
+}
+
+/* Main Styles */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(200px, auto);
+  padding: 20px 20px;
+  gap: 5px;
+}
+
+.box1,
+.box2,
+.box3 {
+  padding: 10px;
+  background: rgba(21, 13, 29, 0);
+  color: rgba(255, 255, 255, 1);
+}
+
+.box1 {
+  grid-column: 1/1;
+  grid-row: 1/4;
+  background: url(../images/DSC08741.jpeg) bottom no-repeat;
+  background-size: cover;
+  overflow: visible;
+  float: right;
+  z-index: -1;
+}
+
+.box1 img {
+  width: 100%;
+}
+
+.box2 h1 {
+  font-size: 50px;
+  z-index: 3000;
+  animation: ani3 ease-in-out 2s forwards;
+}
+
+.box3 {
+  display: grid;
+  grid-column: 1/1;
+  grid-row: 3/4;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 2000;
+  animation: ani1 ease-in-out 2s forwards;
+}
+
+.nested {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  padding: 5px;
+  font-size: 100px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.nested2 {
+  grid-column: 2/4;
+  grid-row: 3/4;
+  padding: 5px;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.box4 {
+  grid-column: 1/2;
+  grid-row: 2/4;
+  font-size: max(5 * (2vw + 1vh) / 20, 8px);
+  animation: ani2 ease-in-out 2s forwards;
+}
+
+.box4 img {
+  width: clamp(100px, 80%, 300px);
+}
+
+@keyframes ani1 {
+  from {
+    transform: translateX(1000px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes ani2 {
+  from {
+    transform: translateY(-500px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes ani3 {
+  from {
+    transform: translateX(-500px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+/*articles*/
+article {
+  width: 100vw; 
+  height: 100%;
+  margin: 0; 
+  margin-bottom: 40px;
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  background: rgb(0, 0, 0);
+  overflow: hidden;
+}
+
+.imgb {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  flex: 1;
+  order: 1;
+  background: rgb(0, 0, 0);
+}
+
+.imgb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.textb {
+  width: 50%; 
+  height: 100%;
+  padding: 30px;
+  color: rgb(0, 0, 0);
+  box-sizing: border-box;
+  text-align: center;
+  border: solid 5px rgba(67, 67, 67, 0);
+  background: rgb(0, 0, 0);
+  transition: border 1.5s, background 0.5s;
+  -webkit-transition: border 1.5s, background 0.5s;
+  transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  flex: 1;
+  order: 2;
+  color: rgba(255, 255, 255, 1);
+}
+
+.moreb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(0, 0, 0);
+  padding: 30px;
+  color: rgba(255, 255, 255, 1);
+  opacity: 0;
+  transition: opacity 1s, color 2s;
+  -webkit-transition: opacity 1s;
+  transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+}
+
+article:hover {
+  cursor: pointer;
+}
+
+article:hover .moreb {
+  opacity: 1;
+}
+
+article:hover .textb {
+  border: solid 7px rgb(0, 0, 0);
+  background: rgba(255, 255, 255, 0.841);
+  color: black;
+}
+
+.textb h3 {
+  font-size: min(5vw, 25px);
+}
+
+.textb p {
+  font-size: max(1vw, 15px);
+  padding: 10px;
+  line-height: 2em;
+}
+
+/* Subtitle Styles */
+.subtitle {
+  padding: 20px;
+  text-align: center;
+}
+
+.subtitle h1 {
+  color: rgb(255, 255, 255);
+}
+
+/* Footer Styles */
+footer {
+  font-size: 0.5em;
+  clear: both;
+  text-align: center;
+  color: rgb(255, 255, 255, 0.4);
+  margin-top: 40px;
+}
+
+/* Media Queries for Tablets */
+@media only screen and (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 5px;
+    padding: 20px 20px;
+  }
+
+  .box1 {
+    grid-column: 2/5;
+    grid-row: 1/4;
+  }
+
+  .box2 {
+    grid-column: 1/3;
+    grid-row: 3/4;
+  }
+
+  .box3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column: 2/5;
+    grid-row: 2/3;
+  }
+
+  .nested {
+    grid-column: 1/4;
+    grid-row: 1/4;
+  }
+
+  .box4 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    font-size: max(5 * (2vw + 1vh) / 20, 10px);
+  }
+
+  .menu {
+    display: none;
+  }
+
+  article {
+    height: 350px;
+    flex-direction: row;
+  }
+}
+
+/* Media Queries for Desktops */
+@media only screen and (min-width: 1200px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 5px;
+    padding: 20px 20px; 
+  }
+  .box1 {
+    grid-column: 2/5;
+    grid-row: 1/7;
+  }
+  .box2 {
+    grid-column: 1/4;
+    grid-row: 5/7;
+  }
+
+  .box3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column: 2/4;
+    grid-row: 3/5;
+  }
+
+  .nested {
+    grid-column: 1/3;
+    grid-row: 1/3;
+  }
+
+  .imgb:nth-child(2n) {
+    order: 2;
+  }
+
+  .textb:nth-child(2n) {
+    order: 1;
+  }
+}
